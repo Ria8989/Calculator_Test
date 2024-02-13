@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE_NAME = 'calculator'
         GITHUB_REPO_URL = 'https://github.com/Ria8989/Calculator_Test.git'
-        GITHUB_PAT = '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'
+        
     }
 
     stages {
@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Checkout the code from the GitHub repository
-                    git branch: 'main', credentialId:"${GITHUB_PAT}", url: "${GITHUB_REPO_URL}"
+                    git branch: 'main', url: "${GITHUB_REPO_URL}"
                 }
             }
         }
